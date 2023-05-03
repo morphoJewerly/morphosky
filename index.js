@@ -10,7 +10,7 @@ import multer from "multer";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 import TelegramBot from "node-telegram-bot-api"
 import dotenv from 'dotenv'; 
-mongoose.connect(process.env.LINK_TO_DB)
+mongoose.connect('mongodb+srv://gregiv99:dinamo333@cluster0.qsmamz1.mongodb.net/blog?retryWrites=true&w=majority')
 .then(() => console.log("db Ok"))
 .catch((err) => console.log("db error" ,err))
 dotenv.config();
