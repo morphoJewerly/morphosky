@@ -11,7 +11,7 @@ import handleValidationErrors from "./utils/handleValidationErrors.js";
 import TelegramBot from "node-telegram-bot-api"
 import dotenv from 'dotenv'; 
 dotenv.config();
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("db Ok"))
 .catch((err) => console.log("db error" ,err))
  const  app = express();
