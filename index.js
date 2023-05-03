@@ -73,7 +73,7 @@ mongoose.connect(process.env.DATABASE_URL)
 
 app.post("/auth/register",registerValidation,handleValidationErrors, UserController.register );
 
-app.post("/auth/login",loginValidation,handleValidationErrors, UserController.login )
+app.post("/auth/login",loginValidation,handleValidationErrors, UserController.login );
 
 app.get("/auth/me",  checkAuth ,UserController.getMe )
  
