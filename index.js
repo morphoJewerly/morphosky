@@ -9,8 +9,8 @@ import cors from "cors";
 import multer from "multer";
 import handleValidationErrors from "./utils/handleValidationErrors.js";
 import TelegramBot from "node-telegram-bot-api"
-import dotenv from 'dotenv';
-mongoose.connect("mongodb+srv://gregiv99:dinamo333@cluster0.qsmamz1.mongodb.net/blog?retryWrites=true&w=majority")
+import dotenv from 'dotenv'; 
+mongoose.connect(process.env.LINK_TO_DB)
 .then(() => console.log("db Ok"))
 .catch((err) => console.log("db error" ,err))
 dotenv.config();
@@ -83,7 +83,7 @@ app.post("/posts",checkAuth, createPostsValidation,handleValidationErrors, PostC
 app.delete("/posts/:id",checkAuth, PostController.remove);
 app.patch("/posts/:id",checkAuth,handleValidationErrors, PostController.update);
 
- app.listen(4444, (err) =>{
+ app.listen(process.env.PORT || 4444, (err) =>{
     if (err) {
         return console.log(err);
     }
