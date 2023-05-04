@@ -11,9 +11,12 @@ import handleValidationErrors from "./utils/handleValidationErrors.js";
 import TelegramBot from "node-telegram-bot-api"
 import dotenv from 'dotenv'; 
 dotenv.config();
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 .then(() => console.log("db Ok"))
-.catch((err) => console.log("db error" ,err))
+.catch((err) => console.log("db error",err))
  const  app = express();
  const storage = multer.diskStorage({
     destination:(_, __, cb) => {
