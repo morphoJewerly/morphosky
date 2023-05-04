@@ -53,7 +53,8 @@ export const getAll = async (req, res) => {
         { _id: postId },
         {
           title : req.body.title,
-          text : req.body.text,
+          text1 : req.body.text1,
+          text2 : req.body.text2,
           price : req.body.price,
           category: req.body.category,
           imgmain:req.body.imgmain,
@@ -77,7 +78,8 @@ export const create = async (req,res) => {
    try {
     const doc = new PostModel ({
         title : req.body.title,
-        text : req.body.text,
+        text1 : req.body.text1,
+        text2 : req.body.text2,
         price : req.body.price,
         category: req.body.category,
         imgmain:req.body.imgmain,

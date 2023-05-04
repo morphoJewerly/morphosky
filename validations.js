@@ -11,7 +11,8 @@ export const loginValidation = [
 ]
 export const createPostsValidation = [
     body("title","Введено невірний формат даних").isLength({min:3}).isString(),
-    body("text","Введено невірний формат даних").isLength({min:3}).isString(),
+    body("text1","Введено невірний формат даних").isLength({min:3}).isString(),
+    body("text2","Введено невірний формат даних").isLength({min:3}).isString(),
     body("price","Введено невірний формат даних").isNumeric(),
     body("category","Введено невірний формат даних").isNumeric(),
     body("imgmain","Введено невірний формат даних").isString(),

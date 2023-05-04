@@ -5,10 +5,14 @@ const  PostSchema = new mongoose.Schema({
     type:String,
     required:true,
  },
- text : {
+ text1 : {
     type:String,
     required:true,
  },
+ text2 : {
+   type:String,
+   required:true,
+},
  price : {
     type:Number,
     required:true,
