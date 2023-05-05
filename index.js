@@ -69,7 +69,7 @@ mongoose.connect(process.env.MONGODB_URI,{
   
     const telegramMessage = `Name: ${fullName}\nPhone: ${phone}\nCity: ${city}\n\n${itemsText}\nTotalCount: ${totalCount}\nTotalPrice: ${cartTotalPrice}`;
     sendTelegramMessage(chatId, telegramMessage);
-    res.send('Form submitted successfully!');
+    res.send('Form submitted successfully!')
   });
 
 
