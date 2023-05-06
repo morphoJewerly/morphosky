@@ -89,7 +89,7 @@ app.post("/auth/register",registerValidation,handleValidationErrors, UserControl
 
 app.post("/auth/login",loginValidation,handleValidationErrors, UserController.login );
 
-app.get("/auth/me",  checkAuth ,UserController.getMe )
+app.get("/auth/me",  checkAuth ,UserController.getMe );
  
 app.get("/posts",PostController.getAll);
 app.get("/posts/:id",PostController.getOne);
