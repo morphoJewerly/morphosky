@@ -43,7 +43,7 @@ mongoose.connect(process.env.MONGODB_URI,{
 
  "============================================================="
  const botToken =  process.env.TELEGRAM_BOT_TOKEN;
- const bot = new TelegramBot(botToken, { polling: true });
+ const bot = new TelegramBot(botToken, { polling: true })
  app.use(express.urlencoded({ extended: true }));
 
  function sendTelegramMessage(chatId, message) {
