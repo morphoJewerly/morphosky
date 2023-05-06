@@ -54,7 +54,7 @@ mongoose.connect(process.env.MONGODB_URI,{
     const { name, email, phone, details, letter } = req.body;
     const telegramMessage = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nMesssage: ${letter}\nDetails: ${details}`;
   
-    sendTelegramMessage(chatId, telegramMessage);
+    sendTelegramMessage(chatId, telegramMessage)
     res.send('Form submitted successfully!');
   });
   app.post('/form2', (req, res) => {
