@@ -99,7 +99,7 @@ app.patch("/posts/:id",checkAuth,handleValidationErrors, PostController.update);
 
  app.listen(process.env.PORT || 4444, (err) => {
     if (err) {
-        return console.log(err);
+        return console.log(err)
     }
     console.log("server work!")
  });
