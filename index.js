@@ -59,7 +59,7 @@ mongoose.connect(process.env.MONGODB_URI,{
   });
   app.post('/form2', (req, res) => {
     const chatId = process.env.TELEGRAM_CHAT_ID;
-    const { fullName, phone, city,descr, items, totalCount, cartTotalPrice } = req.body;
+    const { fullName, phone, city,descr, items, totalCount, cartTotalPrice , email } = req.body;
   
     let itemsText = '';
     for (let i = 0; i < items.length; i++) {
@@ -67,7 +67,7 @@ mongoose.connect(process.env.MONGODB_URI,{
       itemsText += `${title} x ${count} - ${price} грн\n`;
     }
   
-    const telegramMessage = `Name: ${fullName}\nPhone: ${phone}\nCity: ${city}\nDetails: ${descr}\n\n${itemsText}\nTotalCount: ${totalCount}\nTotalPrice: ${cartTotalPrice}`;
+    const telegramMessage = `Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\City: ${city}\nSizeRing: ${descr}\n\n${itemsText}\nTotalCount: ${totalCount}\nTotalPrice: ${cartTotalPrice}`;
     sendTelegramMessage(chatId, telegramMessage);
     res.send('Form submitted successfully!')
   });
