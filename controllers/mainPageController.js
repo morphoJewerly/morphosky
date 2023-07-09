@@ -12,9 +12,8 @@ export const getAll = async (req, res) => {
   }
   export const update = async (req, res) => {
     try {
-      const mainPageId = req.params.id;
+      const mainPageId = req.params;
       await  mainPage.updateOne(
-        { _id: mainPageId },
         {  
           mainCitate: req.body.mainCitate,
           h1 : req.body.h1 ,
