@@ -19,3 +19,8 @@ export const createPostsValidation = [
     body("imgsecond","Введено невірний формат даних").isString(),
     body("imgthird","Введено невірний формат даних").isString(),
 ]
+export const createItemValidation = [
+    body("title","Введено невірний формат даних").isLength({min:3}).isString(),
+    body("text","Введено невірний формат даних").isLength({min:3}).isString(),
+    body("imgmain","Введено невірний формат даних").isString(),
+]
