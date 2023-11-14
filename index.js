@@ -1,9 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-import {registerValidation,loginValidation,createPostsValidation, } from "./validations.js"
+import {registerValidation,loginValidation,createPostsValidation,createItemValidation, } from "./validations.js"
 import checkAuth from "./utils/checkAuth.js"
 import *as UserController  from "./controllers/UserController.js"
 import *as PostController  from "./controllers/PostController.js"
+import *as ItemController  from "./controllers/ItemController.js"
 import *as mainPageController  from "./controllers/mainPageController.js"
 import cors from "cors";
 import multer from "multer";
@@ -96,6 +97,12 @@ app.get("/posts/:id",PostController.getOne);
 app.post("/posts",checkAuth, createPostsValidation,handleValidationErrors, PostController.create);
 app.delete("/posts/:id",checkAuth, PostController.remove);
 app.patch("/posts/:id",checkAuth,handleValidationErrors, PostController.update);
+
+app.get("/items",ItemController.getAll);
+app.get("/items/:id",ItemController.getOne);
+app.post("/items",checkAuth, createItemValidation,handleValidationErrors, ItemController.create);
+app.delete("/items/:id",checkAuth, ItemController.remove);
+app.patch("/items/:id",checkAuth,handleValidationErrors, ItemController.update);
 
  app.listen(process.env.PORT || 4444, (err) => {
     if (err) {
